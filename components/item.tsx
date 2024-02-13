@@ -7,6 +7,7 @@ import {
   Dialog,
   DialogButton,
 } from "konsta/react";
+import { Capacitor } from "@capacitor/core";
 import { useRouter } from "next/router";
 import { Filesystem, Directory } from "@capacitor/filesystem";
 import { FileOpener } from "@capacitor-community/file-opener";
@@ -37,17 +38,21 @@ export function PayslipItem({ payslip }: { payslip: Payslip }) {
       <Block>
         <Button
           onClick={async () => {
-            try {
-              const { path } = await Filesystem.downloadFile({
-                path: "dummy.pdf",
-                url: payslip.file,
-                directory: Directory.Documents,
-              });
-              await FileOpener.open({
-                filePath: path as string,
-              });
-            } catch (e) {
-              setAlert(true);
+            if (Capacitor.isNativePlatform()) {
+              try {
+                const { path } = await Filesystem.downloadFile({
+                  path: "dummy.pdf",
+                  url: payslip.file,
+                  directory: Directory.Documents,
+                });
+                await FileOpener.open({
+                  filePath: path as string,
+                });
+              } catch (e) {
+                setAlert(true);
+              }
+            } else {
+              window.open(payslip.file);
             }
           }}
         >
