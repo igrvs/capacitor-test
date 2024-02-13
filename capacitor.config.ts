@@ -8,6 +8,11 @@ const config: CapacitorConfig = {
     androidScheme: "https",
     url: "http://127.0.0.1:3000",
   },
+  plugins: {
+    CapacitorHttp: {
+      enabled: true,
+    },
+  },
 };
 
 export default config;
