@@ -10,18 +10,18 @@ This is a `Next.js` + `Capacitor` + `Konsta` app.
 ```
  Serving!
    - Local: http://localhost:3000
-   - Network:  http://10.42.8.143:3000 <- save this URL
+   - Network:  http://10.42.8.143:3000 <- copy this URL
 ```
 
-## Native
+### Native
 
-1. Save your local running url to `capacity.config.js`:
+1. Paste your local running URL to `capacity.config.js`:
 
 ```
 ...
  server: {
     cleartext: true,
-    url: "http://10.42.8.143:3000", <- put yours URL here
+    url: "http://10.42.8.143:3000", <- put your URL here
   },
 ...
 ```
