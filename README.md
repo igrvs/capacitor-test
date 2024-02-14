@@ -5,7 +5,13 @@ This is a `Next.js` + `Capacitor` + `Konsta` app.
 ### Web
 
 1. `npx next build` will build the app with output files (including `index.html` we need for Capacitor).
-2. `npx serve@latest out` will run build locally.
+2. `npx serve@latest out` will run build locally. You will get a message:
+
+```
+ Serving!
+   - Local: http://localhost:3000
+   - Network:  http://10.42.8.143:3000 <- save this URL
+```
 
 ## Native
 
@@ -15,7 +21,7 @@ This is a `Next.js` + `Capacitor` + `Konsta` app.
 ...
  server: {
     cleartext: true,
-    url: "http://10.42.8.143:3000", <- put yours here
+    url: "http://10.42.8.143:3000", <- put yours URL here
   },
 ...
 ```
