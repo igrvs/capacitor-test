@@ -5,8 +5,8 @@ const config: CapacitorConfig = {
   appName: "capacitor-test",
   webDir: "out",
   server: {
-    androidScheme: "https",
-    url: "http://127.0.0.1:3000",
+    cleartext: true,
+    // url: "http://127.0.0.1:3000",
   },
   plugins: {
     CapacitorHttp: {

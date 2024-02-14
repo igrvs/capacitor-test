@@ -9,15 +9,10 @@ This is a `Next.js` + `Capacitor` + `Konsta` app.
 
 ## Native
 
-1. Change the URL inside `capacitor.config.js` to match your localhost setup (pointing to `localhost:3000`):
+1. You can sync your web application to your native project by running the following command:
 
 ```
-...
-  server: {
-    androidScheme: "https",
-    url: "http://127.0.0.1:3000",
-  },
-...
+npx cap sync
 ```
 
 2. Build native project using XCode / Android Studio & run it.
