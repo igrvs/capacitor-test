@@ -4,15 +4,27 @@ This is a `Next.js` + `Capacitor` + `Konsta` app.
 
 ### Web
 
-1. `next build` will build the app with output files (including `index.html` we need for Capacitor).
-2. `next dev` will run it locally (`localhost:3000`).
+1. `npx next build` will build the app with output files (including `index.html` we need for Capacitor).
+2. `npx serve@latest out` will run build locally.
 
 ## Native
 
-1. You can sync your web application to your native project by running the following command:
+1. Save your local running url to `capacity.config.js`:
+
+```
+...
+ server: {
+    cleartext: true,
+    url: "http://10.42.8.143:3000", <- put yours here
+  },
+...
+```
+
+2. You can sync your web application build to your native project by running the following commands:
 
 ```
 npx cap sync
+npx cap copy
 ```
 
 2. Build native project using XCode / Android Studio & run it.

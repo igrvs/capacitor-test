@@ -6,7 +6,7 @@ const config: CapacitorConfig = {
   webDir: "out",
   server: {
     cleartext: true,
-    // url: "http://127.0.0.1:3000",
+    // url: "http://10.42.8.143:3000",
   },
   plugins: {
     CapacitorHttp: {
